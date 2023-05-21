@@ -1,0 +1,17 @@
+<p class="enable">diretivas-atributo works!</p>
+<p [ngClass]="estiloDianmico">Estilo dinamico</p>
+<button (click)="trocar()">Trocar Estilo</button>
+
+<h3 [ngStyle]="{background: corFundo, color: corFonte}">Diretiva Atributo NgStyle</h3>
+
+<hr>
+<input type="text" [(ngModel)]="itemNgModel">
+<button (click)="adicionarLista()">Adicionar</button>
+<p>Tow-way data biding: {{itemNgModel}}</p>
+<ul>
+  <li *ngFor="let elemento of lista">{{elemento}}</li>
+</ul>
+
+<ng-template [ngIf]="isEnable">
+  <a href="#">URL template</a>
+</ng-template>

@@ -1,0 +1,50 @@
+<p *ngIf="true">card works!</p>
+
+<h3 *ngIf="false">Escondido - ngOnDestroy()</h3>
+
+<h3 *ngIf="isAlive; else blocoTemplate">Diretiva com Data Binding</h3>
+
+<ng-template #blocoTemplate>
+  <h3>Bloco ng-template</h3>
+</ng-template>
+<button (click)="mudarBloco()">Mudar Bloco</button>
+
+<!-- FOR -->
+<ul>
+  <li *ngFor="let p of colecao; let i = index">
+    {{i}} - {{ p }}
+    <button (click)="remover(i)">Remover</button>
+  </li>
+</ul>
+<button (click)="adicionar()">Adicionar</button>
+<button (click)="remover(-1)">Remover Ultimo</button>
+
+<!-- SWITCH CAS -->
+<div [ngSwitch]="menuType">
+  <div *ngSwitchCase="'user'">
+    <ul>
+      <li>editar perfil</li>
+      <li>adicionar cartão</li>
+    </ul>
+  </div>
+  <div *ngSwitchCase="'admin'">
+    <ul>
+      <li>editar perfil</li>
+      <li>adicionar cartão</li>
+      <li>gerenciar usuarios</li>
+    </ul>
+  </div>
+  <div *ngSwitchCase="'root'">
+    <ul>
+      <li>editar perfil</li>
+      <li>adicionar cartão</li>
+      <li>gerenciar usuarios</li>
+      <li>gerenciar administradores</li>
+    </ul>
+  </div>
+  <div *ngSwitchDefault>
+    <ul>
+      <li>Menu default</li>
+    </ul>
+  </div>
+</div>
